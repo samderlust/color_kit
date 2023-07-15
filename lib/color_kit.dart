@@ -62,3 +62,11 @@ List<Color> generateAnalogousPalette(Color baseColor, {int count = 5}) {
 
   return palette;
 }
+
+Color mixColors(Color color1, Color color2, [double ratio = .5]) {
+  int red = (color1.red * ratio + color2.red * (1 - ratio)).round();
+  int green = (color1.green * ratio + color2.green * (1 - ratio)).round();
+  int blue = (color1.blue * ratio + color2.blue * (1 - ratio)).round();
+
+  return Color.fromARGB(255, red, green, blue);
+}
